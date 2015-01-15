@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/lib/codetyphon/fpc/fpc64/bin/x86_64-linux/fpc" Date="1420819666"/>
+  <Params Value=" -MObjFPC -Scghi -Cg -O1 -Xs -l -vewnhibq -Fi/home/miguel/trabajando/penrosev2/lib/x86_64-linux -Fu/usr/lib/codetyphon/typhon/components/pl_BGRAbitmap/lib/x86_64-linux/qt -Fu/usr/lib/codetyphon/typhon/components/ideintf/units/x86_64-linux/qt -Fu/usr/lib/codetyphon/typhon/components/lazcontrols/lib/x86_64-linux/qt -Fu/usr/lib/codetyphon/typhon/lcl/units/x86_64-linux/qt -Fu/usr/lib/codetyphon/typhon/lcl/units/x86_64-linux -Fu/usr/lib/codetyphon/typhon/components/lazutils/lib/x86_64-linux -Fu/usr/lib/codetyphon/typhon/packager/units/x86_64-linux -Fu/home/miguel/trabajando/penrosev2/ -FU/home/miguel/trabajando/penrosev2/lib/x86_64-linux/ -dLCL -dLCLqt penrose.lpr"/>
+</CONFIG>

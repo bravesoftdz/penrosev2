@@ -1,0 +1,92 @@
+object Form1: TForm1
+  Left = 232
+  Height = 810
+  Top = 247
+  Width = 994
+  Caption = 'Form1'
+  ClientHeight = 810
+  ClientWidth = 994
+  LCLVersion = '1.3'
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Start'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 104
+    Height = 16
+    Top = 9
+    Width = 58
+    Caption = 'Triangles'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 184
+    Height = 24
+    Top = 9
+    Width = 48
+    OnChange = Edit1Change
+    TabOrder = 1
+    Text = '10'
+  end
+  object Label2: TLabel
+    Left = 264
+    Height = 16
+    Top = 9
+    Width = 80
+    Caption = 'Subdivisions'
+    ParentColor = False
+  end
+  object Edit2: TEdit
+    Left = 360
+    Height = 24
+    Top = 9
+    Width = 80
+    OnChange = Edit2Change
+    TabOrder = 2
+    Text = '1'
+  end
+  object Image1: TImage
+    Left = 0
+    Height = 756
+    Top = 50
+    Width = 989
+    AntialiasingMode = amOff
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Center = True
+  end
+  object Edit3: TEdit
+    Left = 526
+    Height = 24
+    Top = 9
+    Width = 80
+    OnChange = Edit3Change
+    TabOrder = 3
+    Text = '1000'
+  end
+  object Edit4: TEdit
+    Left = 648
+    Height = 24
+    Top = 9
+    Width = 80
+    OnChange = Edit4Change
+    TabOrder = 4
+    Text = '1000'
+  end
+  object Button2: TButton
+    Left = 853
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Save'
+    OnClick = Button2Click
+    TabOrder = 5
+  end
+  object SaveDialog1: TSaveDialog
+    left = 776
+  end
+end
