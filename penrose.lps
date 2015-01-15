@@ -21,8 +21,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="penroseunit"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="117"/>
-        <CursorPos X="24" Y="132"/>
+        <TopLine Value="93"/>
+        <CursorPos X="18" Y="110"/>
         <UsageCount Value="93"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -72,7 +72,6 @@
       </Unit7>
       <Unit8>
         <Filename Value="/usr/lib/codetyphon/typhon/components/pl_BGRAbitmap/source/bgracanvas2d.pas"/>
-        <UnitName Value="BGRACanvas2D"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1125"/>
         <CursorPos X="26" Y="1145"/>
@@ -80,14 +79,13 @@
       </Unit8>
       <Unit9>
         <Filename Value="/usr/lib/codetyphon/typhon/components/pl_BGRAbitmap/source/bgrapolygon.pas"/>
-        <UnitName Value="BGRAPolygon"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="490"/>
         <CursorPos X="3" Y="495"/>
         <UsageCount Value="10"/>
       </Unit9>
     </Units>
-    <JumpHistory Count="28" HistoryIndex="27">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="penroseunit.pas"/>
         <Caret Line="167" Column="42" TopLine="146"/>
@@ -200,6 +198,10 @@
         <Filename Value="penroseunit.pas"/>
         <Caret Line="138" Column="9" TopLine="123"/>
       </Position28>
+      <Position29>
+        <Filename Value="penroseunit.pas"/>
+        <Caret Line="146" Column="64" TopLine="117"/>
+      </Position29>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

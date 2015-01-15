@@ -107,7 +107,7 @@ begin
     ctx.LineTo(translatex(x2),translatey(y2));
     ctx.closePath;
     ctx.fill;
-    if (k mod 512) = 0 then
+    if (k mod 256) = 0 then
     begin
       Form1.Invalidate;
       Image1.Refresh;
@@ -144,12 +144,15 @@ begin
     x2 := (TrianglesArray[k].B.re);
     y2 := (TrianglesArray[k].B.im);
     ctx.LineTo(translatex(x2),translatey(y2));
-
     ctx.stroke;
-      {Form1.Invalidate;
+    if (k mod 256) = 0 then
+    begin
+      Form1.Invalidate;
       Image1.Refresh;
       Application.ProcessMessages;
-      bitmap.Draw(Image1.Canvas, 0, 0);  }
+      bitmap.Draw(Image1.Canvas, 0, 0);
+
+    end;
   end;
 end;
 
