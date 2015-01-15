@@ -1,5 +1,5 @@
 unit penroseunit;
-
+{$inline on}
 {$mode objfpc}{$H+}
 
 interface
@@ -98,13 +98,13 @@ begin
     ctx.beginPath;
     x := (TrianglesArray[k].A.re);
     y := (TrianglesArray[k].A.im);
-    ctx.MoveTo(translatex(x), translatey(y));
+    ctx.MoveTo(translatex(x),translatey(y));
     x1 := (TrianglesArray[k].B.re);
     y1 := (TrianglesArray[k].B.im);
-    ctx.LineTo(translatex(x1), translatey(y1));
+    ctx.LineTo(translatex(x1),translatey(y1));
     x2 := (TrianglesArray[k].C.re);
     y2 := (TrianglesArray[k].C.im);
-    ctx.LineTo(translatex(x2), translatey(y2));
+    ctx.LineTo(translatex(x2),translatey(y2));
     ctx.closePath;
     ctx.fill;
     if (k mod 512) = 0 then
@@ -115,6 +115,10 @@ begin
       bitmap.Draw(Image1.Canvas, 0, 0);
     end;
   end;
+  Form1.Invalidate;
+  Image1.Refresh;
+  Application.ProcessMessages;
+  bitmap.Draw(Image1.Canvas, 0, 0);
 end;
 
 procedure TForm1.PaintLines;
@@ -125,10 +129,12 @@ begin
   //Bitmap.Canvas.Pen.Width := 18 - (subdivisions * 2 + 1);
   writeln('***EN PAINTLINES***');
   ctx.strokeStyle('#0000cd');
+  ctx.lineJoin:='round';
   ctx.lineWidth:=18 - (subdivisions * 2 + 1);
   for k := 0 to numerodetriangulos - 1 do
   begin
     ctx.beginPath;
+    ctx.closePath();
     x := (TrianglesArray[k].C.re);
     y := (TrianglesArray[k].C.im);
     ctx.MoveTo(translatex(x),translatey(y));
@@ -138,11 +144,12 @@ begin
     x2 := (TrianglesArray[k].B.re);
     y2 := (TrianglesArray[k].B.im);
     ctx.LineTo(translatex(x2),translatey(y2));
-    ctx.closePath();
 
     ctx.stroke;
-    if (k mod 256) = 0 then
-    Application.ProcessMessages;
+      {Form1.Invalidate;
+      Image1.Refresh;
+      Application.ProcessMessages;
+      bitmap.Draw(Image1.Canvas, 0, 0);  }
   end;
 end;
 
@@ -197,7 +204,7 @@ begin
         begin
           // Subdivide red triangle
           P := (A1 + ((B1 - A1) / GoldenRatio));
-          color := 0;
+          TrianglesFinal[counter].color := 0;
           TrianglesFinal[counter].A := C1;
           TrianglesFinal[counter].B := P;
           TrianglesFinal[counter].C := B1;
@@ -285,7 +292,6 @@ begin
   Image1.Refresh;
   Application.ProcessMessages;
   bitmap.Draw(Image1.Canvas, 0, 0);
-  //BGRABitmapDraw(Image1,Canvas,0,0);
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
