@@ -126,7 +126,6 @@ var
   k: integer;
   x, y, x1, y1, x2, y2: double;
 begin
-  //Bitmap.Canvas.Pen.Width := 18 - (subdivisions * 2 + 1);
   //writeln('***EN PAINTLINES***');
   ctx.strokeStyle('#0000cd');
   ctx.lineJoin := 'round';
@@ -215,7 +214,6 @@ begin
           TrianglesFinal[counter].A := P;
           TrianglesFinal[counter].B := C1;
           TrianglesFinal[counter].C := A1;
-          //writeln('Después:', color,A.re, A.im, B.re, B.im, C.re, C.im);
           Inc(counter);
         end
         else
@@ -280,7 +278,6 @@ begin
   Bitmap := TBGRABitmap.Create(xres, yres, BGRABlack);
   ctx := Bitmap.Canvas2D;
   CreateWheel;
-  //writeln('subdivisions:', subdivisions);
   l := 0;
   repeat
     begin
