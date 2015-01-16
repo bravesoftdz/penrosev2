@@ -1,4 +1,5 @@
 unit penroseunit;
+
 {$inline on}
 {$mode objfpc}{$H+}
 
@@ -67,7 +68,7 @@ implementation
 function TForm1.translatex(x: double): integer; inline;
 
 begin
-  Result := round ((x + 1) * (xres - 1) / 2);
+  Result := round((x + 1) * (xres - 1) / 2);
 end;
 
 function TForm1.translatey(y: double): integer; inline;
@@ -80,9 +81,8 @@ procedure TForm1.PaintTriangles2;
 var
   k: integer;
   x, y, x1, y1, x2, y2: double;
-  tempcolor: TColor;
 begin
-  writeln('***EN PAINTTRIANGLES2***');
+  //writeln('***EN PAINTTRIANGLES2***');
   for k := 0 to numerodetriangulos - 1 do
   begin
     if TrianglesArray[k].color = 0 then
@@ -98,13 +98,13 @@ begin
     ctx.beginPath;
     x := (TrianglesArray[k].A.re);
     y := (TrianglesArray[k].A.im);
-    ctx.MoveTo(translatex(x),translatey(y));
+    ctx.MoveTo(translatex(x), translatey(y));
     x1 := (TrianglesArray[k].B.re);
     y1 := (TrianglesArray[k].B.im);
-    ctx.LineTo(translatex(x1),translatey(y1));
+    ctx.LineTo(translatex(x1), translatey(y1));
     x2 := (TrianglesArray[k].C.re);
     y2 := (TrianglesArray[k].C.im);
-    ctx.LineTo(translatex(x2),translatey(y2));
+    ctx.LineTo(translatex(x2), translatey(y2));
     ctx.closePath;
     ctx.fill;
     if (k mod 256) = 0 then
@@ -127,23 +127,23 @@ var
   x, y, x1, y1, x2, y2: double;
 begin
   //Bitmap.Canvas.Pen.Width := 18 - (subdivisions * 2 + 1);
-  writeln('***EN PAINTLINES***');
+  //writeln('***EN PAINTLINES***');
   ctx.strokeStyle('#0000cd');
-  ctx.lineJoin:='round';
-  ctx.lineWidth:=18 - (subdivisions * 2 + 1);
+  ctx.lineJoin := 'round';
+  ctx.lineWidth := 18 - (subdivisions * 2 + 1);
   for k := 0 to numerodetriangulos - 1 do
   begin
     ctx.beginPath;
     ctx.closePath();
     x := (TrianglesArray[k].C.re);
     y := (TrianglesArray[k].C.im);
-    ctx.MoveTo(translatex(x),translatey(y));
+    ctx.MoveTo(translatex(x), translatey(y));
     x1 := (TrianglesArray[k].A.re);
     y1 := (TrianglesArray[k].A.im);
-    ctx.LineTo(translatex(x1),translatey(y1));
+    ctx.LineTo(translatex(x1), translatey(y1));
     x2 := (TrianglesArray[k].B.re);
     y2 := (TrianglesArray[k].B.im);
-    ctx.LineTo(translatex(x2),translatey(y2));
+    ctx.LineTo(translatex(x2), translatey(y2));
     ctx.stroke;
     if (k mod 256) = 0 then
     begin
@@ -151,7 +151,6 @@ begin
       Image1.Refresh;
       Application.ProcessMessages;
       bitmap.Draw(Image1.Canvas, 0, 0);
-
     end;
   end;
 end;
@@ -168,13 +167,13 @@ var
   T: Complex;
 begin
   //Create wheel of red triangles around the origin
-  writeln('***EN CREATEWHEEL***');
+  //writeln('***EN CREATEWHEEL***');
   for j := 0 to numerodetriangulos - 1 do
   begin
     TrianglesArray[j].color := 0;
     TrianglesArray[j].A := 0;
-    TrianglesArray[j].B := FromPolarCoordinates(1, (((2 * j + 1) * PI) / 10));
-    TrianglesArray[j].C := FromPolarCoordinates(1, (((2 * j - 1) * PI) / 10));
+    TrianglesArray[j].B := FromPolarCoordinates(1, (((2 * j + 1) * PI) / numerodetriangulos));
+    TrianglesArray[j].C := FromPolarCoordinates(1, (((2 * j - 1) * PI) / numerodetriangulos));
     if j mod 2 = 0 then
     begin
       with TrianglesArray[j] do
@@ -194,7 +193,7 @@ var
   P, Q, R, A1, B1, C1: complex;
   TrianglesFinal: array [0..65535 * 2] of Triangle;
 begin
-  writeln('***EN SUBDIVIDE***');
+  //writeln('***EN SUBDIVIDE***');
   begin
     counter := 0;
     i := 0;
@@ -291,10 +290,10 @@ begin
   until l = subdivisions;
   PaintTriangles2;
   PaintLines;
+  Bitmap.Draw(Image1.Canvas, 0, 0);
+  Application.ProcessMessages;
   Form1.Invalidate;
   Image1.Refresh;
-  Application.ProcessMessages;
-  bitmap.Draw(Image1.Canvas, 0, 0);
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -302,7 +301,6 @@ var
   JpegImage: TPortableNetworkGraphic;
 begin
   if SaveDialog1.Execute then
-    //    bitmap.SaveToFile(SaveDialog1.Filename);
   begin
     JpegImage := TPortableNetworkGraphic.Create;
     try
