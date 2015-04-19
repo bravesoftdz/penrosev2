@@ -2,3 +2,4 @@ lib/*
 *.png
 *.jpg
 penrose
+penrose.lpi.bak penrose.lpr.bak penrose.lps.bak penroseunit.lfm.bak penroseunit.pas.bak

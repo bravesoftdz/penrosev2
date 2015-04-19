@@ -1,0 +1,13 @@
+[Box: ::penroseunit - ::<<Unknown>>::TForm]
+X=24
+Y=40
+
+[Box: ::penroseunit - ::penroseunit::TForm1]
+X=20
+Y=121
+
+[Diagram: ::penroseunit]
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowAssoc=1

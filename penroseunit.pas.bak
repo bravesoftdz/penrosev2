@@ -125,6 +125,7 @@ begin
     ctx.LineTo(translatex(x), translatey(y));
     ctx.closePath;
     ctx.fill;
+    ShowMessage('asdasd');
     if (k mod (TrackBar1.Position*10)) = 0 then
     begin
       Form1.Invalidate;
