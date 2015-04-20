@@ -163,7 +163,7 @@ begin
     y := (TrianglesArray[k].B.im);
     ctx.LineTo(translatex(x), translatey(y));
     ctx.stroke;
-    if (k mod (TrackBar1.Position*10)) = 0 then
+    if (k mod (TrackBar1.Position*100)) = 0 then
     begin
       Form1.Invalidate;
       Image1.Refresh;
