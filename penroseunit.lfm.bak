@@ -1,0 +1,232 @@
+object Form1: TForm1
+  Left = 57
+  Height = 810
+  Top = 57
+  Width = 888
+  Caption = 'PenroseV2'
+  ClientHeight = 810
+  ClientWidth = 888
+  Color = clWhite
+  LCLVersion = '1.5'
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Start'
+    Font.Height = -14
+    Font.Name = 'Ubuntu'
+    OnClick = Button1Click
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 104
+    Height = 16
+    Top = 14
+    Width = 58
+    Caption = 'Triangles'
+    Font.Height = -14
+    Font.Name = 'Ubuntu'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 192
+    Height = 22
+    Top = 9
+    Width = 32
+    Font.Height = -14
+    Font.Name = 'Ubuntu'
+    OnChange = Edit1Change
+    ParentFont = False
+    TabOrder = 1
+    Text = '10'
+  end
+  object Label2: TLabel
+    Left = 104
+    Height = 16
+    Top = 46
+    Width = 80
+    Caption = 'Subdivisions'
+    Font.Height = -14
+    Font.Name = 'Ubuntu'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit2: TEdit
+    Left = 192
+    Height = 22
+    Top = 40
+    Width = 32
+    Font.Height = -14
+    Font.Name = 'Ubuntu'
+    OnChange = Edit2Change
+    ParentFont = False
+    TabOrder = 2
+    Text = '8'
+  end
+  object Image1: TImage
+    Left = 8
+    Height = 726
+    Top = 80
+    Width = 875
+    AntialiasingMode = amOn
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = True
+    Center = True
+    Proportional = True
+  end
+  object Edit3: TEdit
+    Left = 304
+    Height = 22
+    Top = 9
+    Width = 50
+    Font.Height = -14
+    Font.Name = 'Ubuntu'
+    OnChange = Edit3Change
+    ParentFont = False
+    TabOrder = 3
+    Text = '800'
+  end
+  object Edit4: TEdit
+    Left = 304
+    Height = 22
+    Top = 40
+    Width = 48
+    Font.Height = -14
+    Font.Name = 'Ubuntu'
+    OnChange = Edit4Change
+    ParentFont = False
+    TabOrder = 4
+    Text = '800'
+  end
+  object Button2: TButton
+    Left = 368
+    Height = 52
+    Top = 8
+    Width = 75
+    Caption = 'Save png'
+    Font.Height = -14
+    Font.Name = 'Ubuntu'
+    OnClick = Button2Click
+    ParentFont = False
+    TabOrder = 5
+  end
+  object Label3: TLabel
+    Left = 256
+    Height = 20
+    Top = 10
+    Width = 41
+    Caption = 'X Size'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 256
+    Height = 20
+    Top = 42
+    Width = 41
+    Caption = 'Y Size'
+    ParentColor = False
+  end
+  object CheckBoxKites: TCheckBox
+    Left = 464
+    Height = 25
+    Top = 10
+    Width = 58
+    Caption = 'Kites'
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 536
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Color1'
+    OnClick = Button3Click
+    TabOrder = 7
+  end
+  object Button4: TButton
+    Left = 536
+    Height = 25
+    Top = 34
+    Width = 75
+    Caption = 'Color2'
+    OnClick = Button4Click
+    TabOrder = 8
+  end
+  object CheckBox1: TCheckBox
+    Left = 464
+    Height = 25
+    Top = 34
+    Width = 60
+    Caption = 'Lines'
+    Checked = True
+    State = cbChecked
+    TabOrder = 9
+  end
+  object Splitter1: TSplitter
+    Left = 0
+    Height = 810
+    Top = 0
+    Width = 5
+  end
+  object TrackBar1: TTrackBar
+    Left = 720
+    Height = 25
+    Top = 8
+    Width = 140
+    Frequency = 10
+    Max = 100
+    Min = 1
+    Position = 50
+    TabOrder = 11
+  end
+  object Label6: TLabel
+    Left = 632
+    Height = 20
+    Top = 8
+    Width = 73
+    Caption = 'Line Speed'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 632
+    Height = 1
+    Top = 34
+    Width = 1
+    ParentColor = False
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '.jpg'
+    left = 32
+    top = 40
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 848
+    top = 72
+  end
+end
