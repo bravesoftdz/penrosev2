@@ -163,7 +163,7 @@ begin
 
   bitmap.Draw(Image1.Canvas, 0, 0);
   Image1.Invalidate;
-  ShowMessage(IntToStr(GetTickCount64 - tiempo));
+  //ShowMessage(IntToStr(GetTickCount64 - tiempo));
   Application.ProcessMessages;
 end;
 
