@@ -1,16 +1,17 @@
 object Form1: TForm1
-  Left = 57
+  Left = 896
   Height = 810
-  Top = 57
-  Width = 888
+  Top = 42
+  Width = 886
   Caption = 'PenroseV2'
   ClientHeight = 810
-  ClientWidth = 888
-  Color = clWhite
+  ClientWidth = 886
+  Color = clNone
+  OnClose = FormClose
   LCLVersion = '1.5'
   object Button1: TButton
     Left = 8
-    Height = 25
+    Height = 56
     Top = 8
     Width = 75
     Caption = 'Start'
@@ -21,9 +22,9 @@ object Form1: TForm1
     TabOrder = 0
   end
   object Label1: TLabel
-    Left = 104
+    Left = 96
     Height = 16
-    Top = 14
+    Top = 8
     Width = 58
     Caption = 'Triangles'
     Font.Height = -14
@@ -31,22 +32,10 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
   end
-  object Edit1: TEdit
-    Left = 192
-    Height = 22
-    Top = 9
-    Width = 32
-    Font.Height = -14
-    Font.Name = 'Ubuntu'
-    OnChange = Edit1Change
-    ParentFont = False
-    TabOrder = 1
-    Text = '10'
-  end
   object Label2: TLabel
-    Left = 104
+    Left = 168
     Height = 16
-    Top = 46
+    Top = 8
     Width = 80
     Caption = 'Subdivisions'
     Font.Height = -14
@@ -54,64 +43,53 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
   end
-  object Edit2: TEdit
-    Left = 192
-    Height = 22
-    Top = 40
-    Width = 32
-    Font.Height = -14
-    Font.Name = 'Ubuntu'
-    OnChange = Edit2Change
-    ParentFont = False
-    TabOrder = 2
-    Text = '8'
-  end
   object Image1: TImage
     Left = 8
     Height = 726
     Top = 80
-    Width = 875
-    AntialiasingMode = amOn
+    Width = 873
+    AntialiasingMode = amOff
     Anchors = [akTop, akLeft, akRight, akBottom]
-    AutoSize = True
     Center = True
     Proportional = True
   end
   object Edit3: TEdit
     Left = 304
     Height = 22
-    Top = 9
+    Top = 8
     Width = 50
     Font.Height = -14
     Font.Name = 'Ubuntu'
+    NumbersOnly = True
     OnChange = Edit3Change
     ParentFont = False
-    TabOrder = 3
-    Text = '800'
+    TabOrder = 1
+    Text = '1000'
   end
   object Edit4: TEdit
     Left = 304
     Height = 22
-    Top = 40
-    Width = 48
+    Top = 37
+    Width = 50
     Font.Height = -14
     Font.Name = 'Ubuntu'
+    NumbersOnly = True
     OnChange = Edit4Change
     ParentFont = False
-    TabOrder = 4
-    Text = '800'
+    TabOrder = 2
+    Text = '1000'
   end
   object Button2: TButton
     Left = 368
-    Height = 52
-    Top = 8
-    Width = 75
+    Height = 57
+    Top = 7
+    Width = 88
     Caption = 'Save png'
     Font.Height = -14
     Font.Name = 'Ubuntu'
     OnClick = Button2Click
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 3
   end
   object Label3: TLabel
     Left = 256
@@ -124,7 +102,7 @@ object Form1: TForm1
   object Label4: TLabel
     Left = 256
     Height = 20
-    Top = 42
+    Top = 41
     Width = 41
     Caption = 'Y Size'
     ParentColor = False
@@ -135,7 +113,7 @@ object Form1: TForm1
     Top = 10
     Width = 58
     Caption = 'Kites'
-    TabOrder = 6
+    TabOrder = 4
   end
   object Button3: TButton
     Left = 536
@@ -143,17 +121,19 @@ object Form1: TForm1
     Top = 8
     Width = 75
     Caption = 'Color1'
+    Color = clYellow
     OnClick = Button3Click
-    TabOrder = 7
+    TabOrder = 5
   end
   object Button4: TButton
     Left = 536
     Height = 25
-    Top = 34
+    Top = 39
     Width = 75
     Caption = 'Color2'
+    Color = clRed
     OnClick = Button4Click
-    TabOrder = 8
+    TabOrder = 6
   end
   object CheckBox1: TCheckBox
     Left = 464
@@ -163,7 +143,7 @@ object Form1: TForm1
     Caption = 'Lines'
     Checked = True
     State = cbChecked
-    TabOrder = 9
+    TabOrder = 7
   end
   object Splitter1: TSplitter
     Left = 0
@@ -172,35 +152,53 @@ object Form1: TForm1
     Width = 5
   end
   object TrackBar1: TTrackBar
-    Left = 720
-    Height = 25
-    Top = 8
+    Left = 728
+    Height = 51
+    Top = 9
     Width = 140
-    Frequency = 10
-    Max = 100
+    Frequency = 2
     Min = 1
-    Position = 50
-    TabOrder = 11
+    Position = 1
+    TabOrder = 9
   end
   object Label6: TLabel
     Left = 632
     Height = 20
-    Top = 8
-    Width = 73
-    Caption = 'Line Speed'
+    Top = 36
+    Width = 79
+    Caption = 'Paint Speed'
     ParentColor = False
   end
   object Label5: TLabel
-    Left = 632
+    Left = 640
     Height = 1
-    Top = 34
+    Top = 53
     Width = 1
     ParentColor = False
   end
+  object TrackBar2: TTrackBar
+    Left = 88
+    Height = 51
+    Top = 24
+    Width = 72
+    Min = 1
+    OnChange = TrackBar2Change
+    Position = 10
+    TabOrder = 10
+  end
+  object TrackBar3: TTrackBar
+    Left = 168
+    Height = 51
+    Top = 24
+    Width = 72
+    OnChange = TrackBar3Change
+    Position = 6
+    TabOrder = 11
+  end
   object SaveDialog1: TSaveDialog
-    DefaultExt = '.jpg'
-    left = 32
-    top = 40
+    DefaultExt = '.png'
+    left = 800
+    top = 80
   end
   object ColorDialog1: TColorDialog
     Color = clBlack
